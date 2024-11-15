@@ -1,11 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useSpring,
-  useMotionValue,
-} from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import {
   ArrowDown,
   ExternalLink,
@@ -16,20 +10,18 @@ import {
   Menu,
   X,
   Clock,
-  Download,
   Star,
   Code,
-  Briefcase,
   Phone,
 } from "lucide-react";
-import Card from "../components/Card";
-import Button from "../components/Button";
-import CustomCursor from "../components/CustomCursor";
-import MagneticButton from "../components/MagneticButton";
-import TextReveal from "../components/TextReveal";
-import WorkProcess from "../components/WorkProcess";
+import Card from "../components/Ui/Card";
+import Button from "../components/Ui/Button";
+import CustomCursor from "../components/Ui/CustomCursor";
+import MagneticButton from "../components/Ui/MagneticButton";
+import TextReveal from "../components/Ui/TextReveal";
+import WorkProcess from "../components/Ui/WorkProcess";
 import projects from "../data/projects";
-import ShineText from "../components/ShineText";
+import ShineText from "../components/Ui/ShineText";
 
 const Portfolio = () => {
   const [scrolled, setScrolled] = useState(false);

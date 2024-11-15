@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import  processes  from "../data/processes";
+import processes from "../../data/processes";
 const WorkProcess = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
