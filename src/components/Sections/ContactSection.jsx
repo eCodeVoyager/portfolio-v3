@@ -1,9 +1,9 @@
 import React from "react";
 import { Mail, Phone, Clock, Github, Twitter, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
-import Card from "./Card";
-import Button from "./Button";
-import TextReveal from "./TextReveal";
+import Card from "../UI/Card";
+import Button from "../UI/Button";
+import TextReveal from "../UI/TextReveal";
 
 const ContactSection = () => {
   const socialLinks = [

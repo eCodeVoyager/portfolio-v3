@@ -1,6 +1,6 @@
 import React from "react";
-import TextReveal from "./TextReveal";
-import Button from "./Button";
+import TextReveal from "../UI/TextReveal";
+import Button from "../UI/Button";
 
 const Footer = () => {
   const navigationLinks = ["Home", "Works", "Process", "Contact"];

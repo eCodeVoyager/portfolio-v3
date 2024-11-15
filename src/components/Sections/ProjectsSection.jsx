@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star, Github, ExternalLink } from "lucide-react";
-import Card from "./Card";
-import Button from "./Button";
-import TextReveal from "./TextReveal";
+import Card from "../UI/Card";
+import Button from "../UI/Button";
+import TextReveal from "../UI/TextReveal";
 
 const ProjectsSection = ({ projects }) => {
   return (

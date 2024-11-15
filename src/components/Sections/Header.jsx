@@ -1,8 +1,8 @@
 import React from "react";
 import { Clock, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import TextReveal from "../Ui/TextReveal";
-import MagneticButton from "../Ui/MagneticButton";
+import TextReveal from "../UI/TextReveal";
+import MagneticButton from "../UI/MagneticButton";
 
 const Header = ({
   scrolled,
