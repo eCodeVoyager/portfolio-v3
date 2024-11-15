@@ -47,7 +47,7 @@ const HeroSection = () => {
             <br />
             <motion.span
               animate={{
-                width: ["0%", "100%", "0%"],
+                width: ["0%", "20%", "0%"],
               }}
               transition={{
                 duration: 2,

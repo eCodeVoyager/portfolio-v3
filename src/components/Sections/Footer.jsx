@@ -1,23 +1,16 @@
 import React from "react";
 import TextReveal from "../UI/TextReveal";
 import Button from "../UI/Button";
+import  footerData  from "../../data/footer";
 
 const Footer = () => {
-  const navigationLinks = ["Home", "Works", "Process", "Contact"];
-  const socialLinks = [
-    { label: "Github", link: "https://github.com" },
-    { label: "Twitter", link: "https://twitter.com" },
-    { label: "LinkedIn", link: "https://linkedin.com" },
-    { label: "Email", link: "mailto:hello@mohiuddin.dev" },
-  ];
-
   return (
     <footer className="py-12 px-6 border-t border-gray-900">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <BrandSection />
-          <NavigationSection links={navigationLinks} />
-          <SocialSection links={socialLinks} />
+          <NavigationSection links={footerData.navigationLinks} />
+          <SocialSection links={footerData.socialLinks} />
           <NewsletterSection />
         </div>
 
