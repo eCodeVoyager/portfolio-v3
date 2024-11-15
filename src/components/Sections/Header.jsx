@@ -49,7 +49,7 @@ const Header = ({
       {/* Header */}
       <header
         className={`fixed w-full top-0 z-40 transition-all duration-300 ${
-          scrolled ? "bg-[#0e1111]/80 backdrop-blur-md" : ""
+          scrolled ? "bg-gray-900/70 backdrop-blur-md" : ""
         }`}
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
