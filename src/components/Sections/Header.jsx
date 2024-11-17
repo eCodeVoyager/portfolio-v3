@@ -1,8 +1,8 @@
 import React from "react";
 import { Clock, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import TextReveal from "../UI/TextReveal";
-import MagneticButton from "../UI/MagneticButton";
+import TextReveal from "../ui/TextReveal";
+import MagneticButton from "../ui/MagneticButton";
 
 const Header = ({
   scrolled,
@@ -54,7 +54,7 @@ const Header = ({
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
           <TextReveal>
-            <div className="text-sm tracking-[4px] text-white">
+            <div className="text-sm tracking-[4px] text-purple-300">
               MOHIUDDIN
               <br />
               AL EHSAN
@@ -68,7 +68,7 @@ const Header = ({
                 href={`#${item.toLowerCase()}`}
                 className={`text-sm ${
                   activeSection === item.toLowerCase()
-                    ? "text-white"
+                    ? "text-purple-300"
                     : "text-gray-400"
                 }`}
                 whileHover={{ y: -2 }}

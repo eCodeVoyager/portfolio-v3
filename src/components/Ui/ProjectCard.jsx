@@ -1,6 +1,5 @@
-
-import React, { useState } from "react";
-import { Star, ExternalLink, Github, MousePointer2 } from "lucide-react";
+import { ExternalLink, Github, MousePointer2 } from "lucide-react";
+import TextReveal from "./TextReveal";
 
 const ProjectCard = ({ project, index, isHovered, onHover, onLeave }) => {
   return (

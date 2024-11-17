@@ -6,11 +6,12 @@ import ProjectsSection from "../components/Sections/ProjectsSection";
 import WorkProcessSection from "../components/Sections/WorkProcessSection";
 import ContactSection from "../components/Sections/ContactSection";
 import Footer from "../components/Sections/Footer";
-import CustomCursor from "../components/UI/CustomCursor";
-import ShineText from "../components/UI/ShineText";
+import CustomCursor from "../components/ui/CustomCursor";
+import ShineText from "../components/ui/ShineText";
 import projects from "../data/projects";
-import TextReveal from "../components/UI/TextReveal";
+import TextReveal from "../components/ui/TextReveal";
 import { Code } from "lucide-react";
+import TechStackSection from "../components/Sections/TechStackSection";
 
 const Portfolio = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -98,6 +99,8 @@ const Portfolio = () => {
       />
 
       <HeroSection />
+
+      <TechStackSection />
 
       <ProjectsSection projects={projects} />
 

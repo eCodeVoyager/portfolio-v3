@@ -10,37 +10,7 @@ import {
   Send,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import TextReveal from "../UI/TextReveal";
-
-// Animated Background Component
-const AnimatedBackground = () => (
-  <div className="absolute inset-0 opacity-30">
-    <motion.div
-      animate={{
-        scale: [1, 1.2, 1],
-        rotate: [0, 180, 360],
-      }}
-      transition={{
-        duration: 20,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-      className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
-    />
-    <motion.div
-      animate={{
-        scale: [1.2, 1, 1.2],
-        rotate: [360, 180, 0],
-      }}
-      transition={{
-        duration: 20,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-      className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl"
-    />
-  </div>
-);
+import TextReveal from "../ui/TextReveal";
 
 // Contact Info Item Component
 const ContactInfoItem = ({ icon: Icon, title, content, link, index }) => (
@@ -209,8 +179,12 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="relative py-32 px-6 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
-      <AnimatedBackground />
+    <section id="contact" className="relative py-32 px-6 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000" />
+      </div>
 
       <div className="max-w-7xl mx-auto relative">
         <div className="p-8 md:p-12 bg-gray-900/30 border border-gray-800/50 backdrop-blur-xl rounded-xl">

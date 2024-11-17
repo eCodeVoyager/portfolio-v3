@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import Card from "../UI/Card";
-import TextReveal from "../UI/TextReveal";
+import Card from "../ui/Card";
+import TextReveal from "../ui/TextReveal";
 
 const HeroSection = () => {
   return (
@@ -16,8 +16,6 @@ const HeroSection = () => {
           <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
           <div className="absolute bottom-[6%] left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000" />
         </div>
-
-       
       </div>
 
       {/* Main Content Container */}
