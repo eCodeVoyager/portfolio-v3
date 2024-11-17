@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Header from "../components/Sections/Header";
 import HeroSection from "../components/Sections/HeroSection";
 import ProjectsSection from "../components/Sections/ProjectsSection";
-import WorkProcess from "../components/UI/WorkProcess";
+import WorkProcessSection from "../components/Sections/WorkProcessSection";
 import ContactSection from "../components/Sections/ContactSection";
 import Footer from "../components/Sections/Footer";
 import CustomCursor from "../components/UI/CustomCursor";
@@ -102,21 +101,7 @@ const Portfolio = () => {
 
       <ProjectsSection projects={projects} />
 
-      <section id="process" className="py-32 px-6 relative">
-        <div className="max-w-7xl mx-auto">
-          <TextReveal>
-            <div className="flex justify-between items-end mb-16">
-              <h2 className="text-4xl font-bold text-white">Work Process</h2>
-              <div className="flex items-center gap-2">
-                <Code className="w-4 h-4" />
-                <span className="text-sm">How I Work</span>
-              </div>
-            </div>
-          </TextReveal>
-          <WorkProcess />
-        </div>
-      </section>
-
+      <WorkProcessSection />
       <ContactSection />
 
       <Footer />

@@ -1,54 +1,199 @@
 import React from "react";
-import { Mail, Phone, Clock, Github, Twitter, Linkedin } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  Clock,
+  Github,
+  Twitter,
+  Linkedin,
+  ArrowRight,
+  Send,
+} from "lucide-react";
 import { motion } from "framer-motion";
-import Card from "../UI/Card";
-import Button from "../UI/Button";
 import TextReveal from "../UI/TextReveal";
 
+// Animated Background Component
+const AnimatedBackground = () => (
+  <div className="absolute inset-0 opacity-30">
+    <motion.div
+      animate={{
+        scale: [1, 1.2, 1],
+        rotate: [0, 180, 360],
+      }}
+      transition={{
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
+    />
+    <motion.div
+      animate={{
+        scale: [1.2, 1, 1.2],
+        rotate: [360, 180, 0],
+      }}
+      transition={{
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl"
+    />
+  </div>
+);
+
+// Contact Info Item Component
+const ContactInfoItem = ({ icon: Icon, title, content, link, index }) => (
+  <motion.div
+    initial={{ opacity: 0, x: -20 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ delay: index * 0.1 }}
+    className="group relative"
+  >
+    <div className="flex items-center gap-4">
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        className="w-12 h-12 rounded-xl bg-gray-800/80 flex items-center justify-center 
+                   group-hover:bg-purple-500/20 transition-all duration-300 backdrop-blur-sm
+                   border border-gray-700/50 group-hover:border-purple-500/50"
+      >
+        <Icon className="w-6 h-6 text-gray-400 group-hover:text-purple-300 transition-colors" />
+      </motion.div>
+      <div>
+        <h3 className="text-white font-medium">{title}</h3>
+        {link ? (
+          <a
+            href={link}
+            className="text-sm text-gray-400 hover:text-purple-300 transition-colors 
+                     inline-flex items-center gap-1 group/link"
+          >
+            {content}
+            <ArrowRight
+              className="w-4 h-4 opacity-0 group-hover/link:opacity-100 
+                                transform translate-x-0 group-hover/link:translate-x-1 transition-all"
+            />
+          </a>
+        ) : (
+          <p className="text-sm text-gray-400">{content}</p>
+        )}
+      </div>
+    </div>
+  </motion.div>
+);
+
+// Social Link Component
+const SocialLink = ({ icon: Icon, link, label, index }) => (
+  <motion.a
+    href={link}
+    target="_blank"
+    rel="noopener noreferrer"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: index * 0.1 }}
+    whileHover={{ scale: 1.1 }}
+    className="relative group"
+  >
+    <div
+      className="w-12 h-12 rounded-xl bg-gray-800/80 flex items-center justify-center 
+                    border border-gray-700/50 group-hover:border-purple-500/50
+                    backdrop-blur-sm transition-all duration-300"
+    >
+      <Icon
+        className="w-5 h-5 text-gray-400 group-hover:text-purple-300 
+                     group-hover:scale-110 transition-all"
+      />
+    </div>
+    <span
+      className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs 
+                     text-gray-400 opacity-0 group-hover:opacity-100 transition-all"
+    >
+      {label}
+    </span>
+  </motion.a>
+);
+
+// Form Input Component
+const FormInput = ({ label, type, placeholder, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: index * 0.1 }}
+    className="space-y-2"
+  >
+    <label className="text-sm text-gray-400">{label}</label>
+    <input
+      type={type}
+      className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700/50 
+                 rounded-lg backdrop-blur-sm focus:outline-none focus:border-purple-500/50 
+                 focus:ring-2 focus:ring-purple-500/20 transition-all
+                 text-white placeholder-gray-500"
+      placeholder={placeholder}
+    />
+  </motion.div>
+);
+
+// Contact Form Component
+const ContactForm = () => (
+  <div className="relative">
+    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 rounded-xl" />
+    <div className="relative p-8 backdrop-blur-xl rounded-xl border border-gray-800/50">
+      <form className="space-y-6">
+        {[
+          { label: "Name", type: "text", placeholder: "Your name" },
+          { label: "Email", type: "email", placeholder: "your@email.com" },
+          { label: "Subject", type: "text", placeholder: "Project discussion" },
+        ].map((input, index) => (
+          <FormInput key={input.label} {...input} index={index} />
+        ))}
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="space-y-2"
+        >
+          <label className="text-sm text-gray-400">Message</label>
+          <textarea
+            className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700/50 
+                       rounded-lg backdrop-blur-sm focus:outline-none focus:border-purple-500/50 
+                       focus:ring-2 focus:ring-purple-500/20 transition-all h-32 resize-none
+                       text-white placeholder-gray-500"
+            placeholder="Tell me about your project..."
+          />
+        </motion.div>
+
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          whileHover={{ scale: 1.02 }}
+          className="w-full py-4 bg-gradient-to-r from-purple-500 to-blue-500
+                     text-white rounded-lg flex items-center justify-center gap-2 
+                     group hover:from-purple-600 hover:to-blue-600 transition-all"
+        >
+          <span>Send Message</span>
+          <Send className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+        </motion.button>
+      </form>
+    </div>
+  </div>
+);
+
+// Main Contact Section Component
 const ContactSection = () => {
   const socialLinks = [
-    { icon: Github, link: "https://github.com" },
-    { icon: Twitter, link: "https://twitter.com" },
-    { icon: Linkedin, link: "https://linkedin.com" },
-    { icon: Mail, link: "mailto:hello@mohiuddin.dev" },
+    { icon: Github, link: "https://github.com", label: "GitHub" },
+    { icon: Twitter, link: "https://twitter.com", label: "Twitter" },
+    { icon: Linkedin, link: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Mail, link: "mailto:hello@example.com", label: "Email" },
   ];
 
-  return (
-    <section id="contact" className="py-32 px-6 relative">
-      <div className="max-w-7xl mx-auto">
-        <Card className="p-12 bg-gray-900/30 border-gray-800/50">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <TextReveal>
-                <h2 className="text-4xl font-bold text-white mb-6">
-                  Let's Work Together
-                </h2>
-                <p className="text-gray-400 mb-8">
-                  Got a project in mind? Let's create something extraordinary
-                  together. I'm always open to discussing new projects and
-                  creative ideas.
-                </p>
-              </TextReveal>
-
-              <ContactInfo />
-              <SocialLinks links={socialLinks} />
-            </div>
-
-            <ContactForm />
-          </div>
-        </Card>
-      </div>
-    </section>
-  );
-};
-
-const ContactInfo = () => {
   const contactDetails = [
     {
       icon: Mail,
       title: "Email",
-      content: "hello@mohiuddin.dev",
-      link: "mailto:hello@mohiuddin.dev",
+      content: "hello@example.com",
+      link: "mailto:hello@example.com",
     },
     {
       icon: Phone,
@@ -64,86 +209,49 @@ const ContactInfo = () => {
   ];
 
   return (
-    <div className="space-y-6">
-      {contactDetails.map(({ icon: Icon, title, content, link }) => (
-        <div key={title} className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center">
-            <Icon className="w-6 h-6" />
-          </div>
-          <div>
-            <h3 className="text-white font-medium">{title}</h3>
-            {link ? (
-              <a
-                href={link}
-                className="text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                {content}
-              </a>
-            ) : (
-              <p className="text-sm text-gray-400">{content}</p>
-            )}
+    <section className="relative py-32 px-6 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
+      <AnimatedBackground />
+
+      <div className="max-w-7xl mx-auto relative">
+        <div className="p-8 md:p-12 bg-gray-900/30 border border-gray-800/50 backdrop-blur-xl rounded-xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <TextReveal>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Let's Work Together
+                </h2>
+                <p className="text-gray-400 mb-8 text-lg">
+                  Got a project in mind? Let's create something extraordinary
+                  together. I'm always open to discussing new projects and
+                  creative ideas.
+                </p>
+              </TextReveal>
+
+              <div className="space-y-6">
+                {contactDetails.map((detail, index) => (
+                  <ContactInfoItem
+                    key={detail.title}
+                    {...detail}
+                    index={index}
+                  />
+                ))}
+              </div>
+
+              <div className="mt-12">
+                <h3 className="text-white font-medium mb-4">Social Links</h3>
+                <div className="flex gap-4">
+                  {socialLinks.map((link, index) => (
+                    <SocialLink key={index} {...link} index={index} />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <ContactForm />
           </div>
         </div>
-      ))}
-    </div>
-  );
-};
-
-const SocialLinks = ({ links }) => {
-  return (
-    <div className="mt-12">
-      <h3 className="text-white font-medium mb-4">Social Links</h3>
-      <div className="flex gap-4">
-        {links.map(({ icon: Icon, link }, index) => (
-          <motion.a
-            key={index}
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.2, rotate: 360 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-colors duration-300"
-          >
-            <Icon className="w-5 h-5" />
-          </motion.a>
-        ))}
       </div>
-    </div>
-  );
-};
-
-const ContactForm = () => {
-  return (
-    <Card className="p-6 bg-gray-800/50 border-gray-700/50">
-      <form className="space-y-6">
-        {[
-          { label: "Name", type: "text", placeholder: "Your name" },
-          { label: "Email", type: "email", placeholder: "your@email.com" },
-          { label: "Subject", type: "text", placeholder: "Project discussion" },
-        ].map(({ label, type, placeholder }) => (
-          <div key={label} className="space-y-2">
-            <label className="text-sm text-gray-400">{label}</label>
-            <input
-              type={type}
-              className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-white transition-colors"
-              placeholder={placeholder}
-            />
-          </div>
-        ))}
-
-        <div className="space-y-2">
-          <label className="text-sm text-gray-400">Message</label>
-          <textarea
-            className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-white transition-colors h-32 resize-none"
-            placeholder="Tell me about your project..."
-          />
-        </div>
-
-        <Button className="w-full bg-white text-black hover:bg-gray-200 transition-colors py-6 rounded-lg">
-          Send Message
-        </Button>
-      </form>
-    </Card>
+    </section>
   );
 };
 
