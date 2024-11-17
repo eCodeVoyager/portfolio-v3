@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Code2, Database, Layout, Shapes, Star, Wrench } from "lucide-react";
-import TextReveal from "../ui/TextReveal";
+import TextReveal from "../Ui/TextReveal";
 
 const TechStackSection = () => {
   const [hoveredCategory, setHoveredCategory] = useState(null);

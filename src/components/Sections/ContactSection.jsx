@@ -10,7 +10,7 @@ import {
   Send,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import TextReveal from "../ui/TextReveal";
+import TextReveal from "../Ui/TextReveal";
 
 // Contact Info Item Component
 const ContactInfoItem = ({ icon: Icon, title, content, link, index }) => (
@@ -179,7 +179,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="relative py-32 px-6 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
+    <section
+      id="contact"
+      className="relative py-32 px-6 bg-gradient-to-b from-gray-900 to-black overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />

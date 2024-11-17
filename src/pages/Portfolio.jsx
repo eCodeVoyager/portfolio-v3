@@ -6,11 +6,9 @@ import ProjectsSection from "../components/Sections/ProjectsSection";
 import WorkProcessSection from "../components/Sections/WorkProcessSection";
 import ContactSection from "../components/Sections/ContactSection";
 import Footer from "../components/Sections/Footer";
-import CustomCursor from "../components/ui/CustomCursor";
-import ShineText from "../components/ui/ShineText";
+import CustomCursor from "../components/Ui/CustomCursor";
+import ShineText from "../components/Ui/ShineText";
 import projects from "../data/projects";
-import TextReveal from "../components/ui/TextReveal";
-import { Code } from "lucide-react";
 import TechStackSection from "../components/Sections/TechStackSection";
 
 const Portfolio = () => {

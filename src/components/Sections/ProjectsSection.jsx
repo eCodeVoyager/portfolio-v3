@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Star } from "lucide-react";
-import TextReveal from "../ui/TextReveal";
-import ProjectCard from "../ui/ProjectCard";
+import TextReveal from "../Ui/TextReveal";
+import ProjectCard from "../Ui/ProjectCard";
 
 const ProjectsSection = ({ projects }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -42,7 +42,6 @@ const ProjectsSection = ({ projects }) => {
         {/* Projects Grid */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}

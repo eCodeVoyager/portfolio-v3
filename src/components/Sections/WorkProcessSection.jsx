@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Code } from "lucide-react";
-import TextReveal from "../ui/TextReveal";
-import ProcessCard from "../ui/ProcessCard";
+import TextReveal from "../Ui/TextReveal";
+import ProcessCard from "../Ui/ProcessCard";
 import processes from "../../data/processes";
 
 const WorkProcess = () => {

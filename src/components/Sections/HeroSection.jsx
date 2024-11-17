@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import Card from "../ui/Card";
-import TextReveal from "../ui/TextReveal";
+import Card from "../Ui/Card";
+import TextReveal from "../Ui/TextReveal";
 
 const HeroSection = () => {
   return (

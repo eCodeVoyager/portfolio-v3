@@ -1,6 +1,6 @@
 import React from "react";
 import { Send, ArrowUpRight, ChevronRight } from "lucide-react";
-import TextReveal from "../ui/TextReveal";
+import TextReveal from "../Ui/TextReveal";
 import { motion } from "framer-motion";
 
 const FooterSection = ({ title, children, delay = 0 }) => (
