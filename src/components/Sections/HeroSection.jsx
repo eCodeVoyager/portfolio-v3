@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Card from "../Ui/Card";
 import TextReveal from "../Ui/TextReveal";
+import ScrollIndicator from "../Ui/ScrollIndicator";
+import Background from "../Ui/Background";
 
 const HeroSection = () => {
   return (
@@ -10,13 +12,7 @@ const HeroSection = () => {
       id="home"
       className="min-h-screen relative bg-gradient-to-b from-black to-gray-900 overflow-hidden"
     >
-      {/* Artistic Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-[6%] left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000" />
-        </div>
-      </div>
+      <Background />
 
       {/* Main Content Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center">
@@ -79,16 +75,8 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-white/80"
-        >
-          <span className="text-sm sm:text-base">Scroll down</span>
-          <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce" />
-        </motion.div>
+        {/* Scroll Down Indicator */}
+        <ScrollIndicator />
       </div>
     </section>
   );

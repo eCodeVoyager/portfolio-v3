@@ -82,9 +82,10 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-[#0e1111] text-gray-400">
+     
       <CustomCursor />
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[2px] bg-white origin-[0%] z-50"
+        className="fixed top-0 left-0 right-0 h-[2px] bg-purple-300 origin-[0%] z-50"
         style={{ scaleX }}
       />
 

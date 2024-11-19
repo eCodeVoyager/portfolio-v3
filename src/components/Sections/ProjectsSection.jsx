@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Star } from "lucide-react";
 import TextReveal from "../Ui/TextReveal";
 import ProjectCard from "../Ui/ProjectCard";
+import Background from "../Ui/Background";
 
 const ProjectsSection = ({ projects }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -9,13 +10,9 @@ const ProjectsSection = ({ projects }) => {
   return (
     <section
       id="works"
-      className="relative py-32 px-6 bg-gradient-to-b from-gray-900 to-black overflow-hidden"
+      className="relative py-32 px-6 bg-gradient-to-b from-black to-gray-900 overflow-hidden"
     >
-      {/* Artistic Background Elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-[6%] left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000" />
-      </div>
+      <Background />
 
       <div className="max-w-7xl mx-auto relative">
         {/* Header Section */}

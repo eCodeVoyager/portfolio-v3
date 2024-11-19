@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Code2, Database, Layout, Shapes, Star, Wrench } from "lucide-react";
 import TextReveal from "../Ui/TextReveal";
+import BackgroundReverse from "../Ui/BackgroundReverse";
 
 const TechStackSection = () => {
   const [hoveredCategory, setHoveredCategory] = useState(null);
@@ -44,13 +45,10 @@ const TechStackSection = () => {
   return (
     <section
       id="stack"
-      className="relative py-32 px-6 bg-gradient-to-b from-black to-gray-900 overflow-hidden"
+      className="relative py-32 px-6 bg-gradient-to-b from-gray-900 to-black overflow-hidden"
     >
       {/* Artistic Background Elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-[10%] left-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000" />
-      </div>
+      <BackgroundReverse />
       <div className="max-w-7xl mx-auto relative">
         <TextReveal>
           <div className="flex justify-between items-end mb-16">
